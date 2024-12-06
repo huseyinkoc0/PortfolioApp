@@ -1,0 +1,20 @@
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntitiyFramework;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Portfolio_Proje.ViewComponents.About
+{
+
+    public class AboutList:ViewComponent
+
+    {
+
+        AboutManager aboutManager = new AboutManager(new EfAboutDal());
+        public IViewComponentResult Invoke()
+        {
+            var values = aboutManager.TGetList();
+            return View(values);
+        }
+
+    }
+}
