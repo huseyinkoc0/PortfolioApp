@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntitiyFramework;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio_Proje.Controllers
 {
@@ -16,6 +19,24 @@ namespace Portfolio_Proje.Controllers
         { 
 
           return NavbarPartial();
+        }
+        [HttpGet]
+        public PartialViewResult SendMessage() 
+        {
+
+
+
+            return SendMessage(); 
+        }
+        [HttpPost]
+        public PartialViewResult SendMessage(Message p)
+        {
+            MessageManager mg = new MessageManager(new EfMessage());
+            p.Date=Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.Status = true;
+            mg.TAdd(p);
+
+            return SendMessage();
         }
     }
 }
