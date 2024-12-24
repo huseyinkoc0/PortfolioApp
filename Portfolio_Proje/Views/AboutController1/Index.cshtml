@@ -1,15 +1,14 @@
-﻿@model EntityLayer.Concrete.Feature
+﻿@model EntityLayer.Concrete.About
 @{
-
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-    <div class="card-header border-0">
-        <h3 class="mb-0">Öne çıkan düzenleme sayfası</h3>
+  <div class="card-header border-0">
+        <h3 class="mb-0">Hakkımda düzenleme sayfası</h3>
     </div>
 @using (Html.BeginForm("Index", "Feature", FormMethod.Post))
 {
-    @Html.HiddenFor(x => x.FeatureID)
+    @Html.HiddenFor(x => x.AboutID)
     <br />
     <label>Başlık</label>
     @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
