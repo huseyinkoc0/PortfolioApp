@@ -18,7 +18,7 @@ namespace Portfolio_Proje.Controllers
             return View(values);
         }
          
-        
+           
         [HttpPost]
         public IActionResult Index(Feature feature)
         {

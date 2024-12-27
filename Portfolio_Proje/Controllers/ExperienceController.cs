@@ -21,7 +21,7 @@ namespace Portfolio_Proje.Controllers
         public IActionResult AddExperience() {
 
             return View();      
-        
+           
         }
         [HttpPost]
         public IActionResult AddExperience(Experience experience)
